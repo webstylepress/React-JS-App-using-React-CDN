@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>React App | WebStylePress</title>
+	</head>
+	<body>
+		<div id="root"></div>
+		<!-- React and ReactDOM -->
+		<script src="https://unpkg.com/react@latest/umd/react.production.min.js"></script>
+		<script src="https://unpkg.com/react-dom@latest/umd/react-dom.production.min.js"></script>
+
+		<!-- Babel Compiler -->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+		<script type="text/babel">
+			function Counter() {
+				const [count, setCount] = React.useState(0);
+
+				function increment() {
+					setCount(count + 1);
+				}
+
+				function decrement() {
+					setCount(count - 1);
+				}
+
+				return (
+					<>
+						<h1>Counter: {count}</h1>
+						<button onClick={increment}>Increment</button>
+						<button onClick={decrement}>Decrement</button>
+					</>
+				);
+			}
+			ReactDOM.render(<Counter />, document.getElementById('root'));
+		</script>
+	</body>
+</html>
